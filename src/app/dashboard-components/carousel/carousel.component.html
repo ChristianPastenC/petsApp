@@ -4,12 +4,7 @@
       *ngIf="i === currentSlide"
       [src]="slide.src"
       class="slide"
+      @carouselAnimation
     />
   </ng-container>
-  <button class="control prev" id="prev" (click)="onPreviousClick()">
-    <span class="arrow left"></span>
-  </button>
-  <button class="control next" id="next" (click)="onNextClick()">
-    <span class="arrow right"></span>
-  </button>
 </div>
