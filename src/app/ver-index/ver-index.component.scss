@@ -1,0 +1,66 @@
+@import "../../themes";
+.container {
+  margin: auto;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 30px;
+  justify-content: center;
+}
+
+.pet {
+  cursor: pointer;
+  max-width: 300px;
+  min-height: 360px;
+  margin: 0px;
+  transition: all 400ms;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.pet p {
+  margin: 0px;
+}
+
+.pet nb-card-header {
+  padding: 0px;
+  border-width: 0px;
+  overflow: hidden;
+  height: 50%;
+}
+
+.pet nb-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.pet img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 70%;
+    min-height: 70%;
+}
+
+nb-layout-column {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card-buttons {
+  width: 100%;
+  align-self: flex-end;
+  flex-grow: 3;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.card-buttons button:nth-child(2) {
+  margin-left: 10px;
+}

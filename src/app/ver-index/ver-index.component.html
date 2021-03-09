@@ -1,1 +1,18 @@
-<p>Index works</p>
+<nb-layout>
+    <nb-layout-column class="container">
+      <nb-card *ngFor="let pet of pets" size="small" class="pet">
+        <nb-card-header>
+          <img src="{{ pet.data.foto }}"/>
+        </nb-card-header>
+        <nb-card-body>
+          <p class="h6">{{ pet.data.nombre }}</p>
+          <p class="subtitle-2">
+            {{ pet.data.genero }}, {{ pet.data.color }}, {{ pet.data.edad }}
+          </p>
+          <p>
+            {{ pet.data.raza }} <br />
+          </p>
+        </nb-card-body>
+      </nb-card>
+    </nb-layout-column>
+  </nb-layout>
