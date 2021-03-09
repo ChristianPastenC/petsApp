@@ -10,10 +10,10 @@ export class CarouselComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    
+    //this.playIntervalo();  
   }
 
-  public slides = [
+  slides = [
     {src: "assets/img1.jpg"},
     {src: "assets/img2.jpg"},
     {src: "assets/img3.jpg"},
@@ -25,8 +25,7 @@ export class CarouselComponent implements OnInit {
 
   onPreviousClick() {
     const previous = this.currentSlide - 1;
-    this.currentSlide = previous < 0 ? this.slides.length - 1 : previous;
-    
+    this.currentSlide = previous < 0 ? this.slides.length - 1 : previous;  
   }
 
   onNextClick() {
@@ -34,10 +33,5 @@ export class CarouselComponent implements OnInit {
     this.currentSlide = next === this.slides.length ? 0 : next;
     console.log("next clicked, new current slide is: ", this.currentSlide);
   }
-
-  function(){
-    setInterval(this.onNextClick,1000);
-  }
-  
   
 }
