@@ -10,9 +10,15 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 
+import { DashboardComponentsModule } from './dashboard-components/dashboard-components.module';
+import { HomeComponent } from './home/home.component';
+import { VerIndexComponent } from './ver-index/ver-index.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    VerIndexComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +27,8 @@ import { environment } from '../environments/environment';
     AngularFireModule.initializeApp(environment.firebase),
     NbThemeModule.forRoot({ name: 'corporate' }),
     NbLayoutModule,
-    NbEvaIconsModule
+    NbEvaIconsModule,
+    DashboardComponentsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

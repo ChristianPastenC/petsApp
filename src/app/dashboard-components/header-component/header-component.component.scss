@@ -1,0 +1,38 @@
+#header{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+img{
+    display:block;
+    width: 30%;
+    height: 30%;
+    margin-right: 25px;
+}
+
+.header-container{
+    display: flex;
+    margin-left: auto; 
+    margin-right: 60px;
+    text-align: right;
+}
+
+.button {
+    margin: 10px;
+    background-color: dodgerblue;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.button:hover{
+    color: rgba($color: #ffffff, $alpha: 0.5);
+}
+
+div{
+    background-color: dodgerblue;
+}
