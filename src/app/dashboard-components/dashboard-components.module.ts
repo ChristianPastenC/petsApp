@@ -29,7 +29,8 @@ import { CarouselComponent } from './carousel/carousel.component';
   ],
   exports:[
     HeaderComponentComponent,
-    FooterComponentComponent
+    FooterComponentComponent,
+    CarouselComponent,
   ]
 })
 export class DashboardComponentsModule { }
