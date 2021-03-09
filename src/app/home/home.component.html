@@ -2,7 +2,15 @@
     <nb-layout-header fixed>
       <app-header-component></app-header-component>
     </nb-layout-header>
-    <nb-layout-column class="colored-column-basic" id="RouterContent">
+    <nb-layout-column>
         <app-carousel></app-carousel>
+    </nb-layout-column>
+</nb-layout>
+<nb-layout>
+  <nb-layout-header>
+    <img id="reference" src="assets/catalogo.png">
+  </nb-layout-header>
+  <nb-layout-column class="colored-column-basic" id="RouterContent">
+    <router-outlet></router-outlet>
   </nb-layout-column>
 </nb-layout>
