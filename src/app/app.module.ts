@@ -9,6 +9,7 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
 
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { DashboardComponentsModule } from './dashboard-components/dashboard-components.module';
 import { HomeComponent } from './home/home.component';
@@ -25,6 +26,7 @@ import { VerIndexComponent } from './ver-index/ver-index.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
     NbThemeModule.forRoot({ name: 'corporate' }),
     NbLayoutModule,
     NbEvaIconsModule,
