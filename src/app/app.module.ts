@@ -4,7 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbCardModule,
+         NbDialogModule,
+} from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 
 import { AngularFireModule } from '@angular/fire';
@@ -14,12 +16,14 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { DashboardComponentsModule } from './dashboard-components/dashboard-components.module';
 import { HomeComponent } from './home/home.component';
 import { VerIndexComponent } from './ver-index/ver-index.component';
+import { PetDialogComponent } from './pet-dialog/pet-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    VerIndexComponent
+    VerIndexComponent,
+    PetDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +35,8 @@ import { VerIndexComponent } from './ver-index/ver-index.component';
     NbLayoutModule,
     NbEvaIconsModule,
     DashboardComponentsModule,
+    NbCardModule,
+    NbDialogModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
