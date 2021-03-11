@@ -1,9 +1,17 @@
-<nb-card size="medium">
-        <nb-card-header>
-            <!--<img src="{{ petData.foto }}"/>-->
-        </nb-card-header>
+<nb-card>
+    <nb-card-header>
+        <img src="{{ petData.foto }}"/>
+    </nb-card-header>
+    <nb-card-body>
         <nb-card-body>
-            
-        </nb-card-body>
+            <p class="h6">{{ petData.nombre }}</p>
+            <p class="subtitle-2">
+                {{ petData.genero }}, {{ petData.color }}, {{ petData.edad }}
+            </p>
+            <p>
+                {{ petData.raza }} <br />
+            </p>
+            </nb-card-body>
+    </nb-card-body>
 </nb-card>
   

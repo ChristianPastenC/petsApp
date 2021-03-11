@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { PetServiceService } from '../services/pet-service.service';
 
 @Component({
   selector: 'app-pet-dialog',
@@ -11,7 +10,7 @@ export class PetDialogComponent implements OnInit {
   petData: any = [];
   
   constructor(
-    private petService: PetServiceService
+    
   ) { }
 
   ngOnInit(): void {
