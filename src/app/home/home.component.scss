@@ -1,12 +1,21 @@
-
 .container {
-    display: block;
-    height: 500px;
-    width: 500px;
-    padding: 2em;
-  }
+  display: block;
+  height: 500px;
+  width: 500px;
+  padding: 2em;
+}
 
-  #reference{
-    height: 100px;
-    width: auto;
-  }
+#reference{
+  height: 75px;
+  width: auto;
+}
+
+img{
+  display: inline;
+}
+
+.filterItems{
+  float: right;
+  vertical-align: -50px;
+}
+

@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule, NbCardModule,
-         NbDialogModule,
+         NbDialogModule, NbSelectModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 
@@ -37,6 +37,7 @@ import { PetDialogComponent } from './pet-dialog/pet-dialog.component';
     DashboardComponentsModule,
     NbCardModule,
     NbDialogModule.forRoot(),
+    NbSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
