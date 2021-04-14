@@ -12,11 +12,9 @@ import { PetDialogComponent } from '../pet-dialog/pet-dialog.component';
 export class VerIndexComponent implements OnInit {
 
   pets: any[];
-  mascota: any = [];
 
   constructor(
     private firestoreService: PetServiceService,
-    private firestoreUsuarios: UserServiceService,
     private dialog: NbDialogService
   ) { }
 
@@ -34,10 +32,10 @@ export class VerIndexComponent implements OnInit {
 
   }
 
-  getDetails(id,petData){
+  getDetails(id,petData,user){
     this.dialog.open(PetDialogComponent, {
       context: {
-        id,petData
+        id,petData,user
       },
     });
   }

@@ -9,9 +9,10 @@ import {UserServiceService} from '../services/user-service.service';
 export class PetDialogComponent implements OnInit {
   id: string = "";
   petData: any = [];
-  userData: any = [];
+  users: any[];
   user: string = "";
-  
+  userData: any = [];
+
   constructor(
     private firestoreService: UserServiceService,
   ) { }
@@ -19,14 +20,23 @@ export class PetDialogComponent implements OnInit {
   ngOnInit(): void {
     console.log('Llega este id ' + this.id);
     console.log('Con este name ' + this.petData.nombre);
-    console.log('Usuario: '+ this.petData.adoptador)
-
-    this.user = this.petData.adoptador;
-    console.log('Confirmo usuario: '+ this.user);
-
-    this.firestoreService.get(this.user).subscribe(res =>{
-      this.userData = res;
+    console.log('Usuario: '+ this.user)
+    
+    this.firestoreService.gets().subscribe((Snapshot) => {
+      this.users = [];
+      Snapshot.forEach((Data: any) => {
+        this.users.push({
+          id: Data.payload.doc.id,
+          data: Data.payload.doc.data()
+        });
+      })
+      var index:number = this.users.indexOf(this.users.find(us => us.id == this.user));
+      this.userData = this.users[index].data;
+      console.log(this.userData.nombre);
     });
+    
+    
+    
   }
 
   parsear(fecha){

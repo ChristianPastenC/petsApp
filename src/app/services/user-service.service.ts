@@ -10,6 +10,7 @@ export class UserServiceService {
   constructor(private firestore: AngularFirestore) {}
 
   public get(documentId: string) {
+    console.log('Entrando al get General');
     return this.firestore.collection('usuario').doc(documentId).snapshotChanges();
   }
   public gets() {
