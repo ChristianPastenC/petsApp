@@ -18,6 +18,7 @@ import { HomeComponent } from './home/home.component';
 import { VerIndexComponent } from './ver-index/ver-index.component';
 import { PetDialogComponent } from './pet-dialog/pet-dialog.component';
 import { InfoComponent } from './info/info.component';
+import { DarAdopcionComponent } from './dar-adopcion/dar-adopcion.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { InfoComponent } from './info/info.component';
     HomeComponent,
     VerIndexComponent,
     PetDialogComponent,
-    InfoComponent
+    InfoComponent,
+    DarAdopcionComponent
   ],
   imports: [
     BrowserModule,
