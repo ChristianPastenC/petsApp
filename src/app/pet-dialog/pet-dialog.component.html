@@ -1,17 +1,45 @@
 <nb-card>
     <nb-card-header>
-        <img src="{{ petData.foto }}"/>
+        <h1>Información de la Mascota</h1>
     </nb-card-header>
-    <nb-card-body>
+    <nb-card-body id="principal">
         <nb-card-body>
-            <p class="h6">{{ petData.nombre }}</p>
-            <p class="subtitle-2">
-                {{ petData.genero }}, {{ petData.color }}, {{ petData.edad }}
-            </p>
-            <p>
-                {{ petData.raza }} <br />
-            </p>
-            </nb-card-body>
+            <div class = "descripcion">
+                <ul class="lista" style="margin-left: 0%;">
+                    <li><p><strong>Nombre:</strong> {{ petData.nombre }}</p></li>
+                    <li><p><strong>Edad:</strong> {{ petData.edad }}</p></li>
+                    <li><p><strong>Raza:</strong> {{petData.raza}}</p></li>
+                    <li><p><strong>Color:</strong> {{ petData.color }}</p></li>
+                    <li><p><strong>Género:</strong> {{ petData.genero }}</p></li>
+                    <li><p><strong>Registro:</strong> {{parsear(petData.f_registro)}}</p></li>
+
+                </ul>
+                <ul class="lista">
+                    <li><p><strong>Características:</strong></p></li>
+                    <li class="interna">
+                        <ul class="interna">
+                            <li><p><strong>Afectuoso:</strong> {{petData.afectuoso}}</p></li>
+                            <li><p><strong>Agresivo:</strong> {{petData.agresivo}}</p></li>
+                            <li><p><strong>Amigable:</strong> {{petData.amigable}}</p></li>
+                            <li><p><strong>Enérgico:</strong> {{petData.energia}}</p></li>
+                            <li><p><strong>Juguetón:</strong> {{petData.jugueton}}</p></li>
+                        </ul>
+                        
+                    </li>
+                </ul>
+                <img src="{{ petData.foto }}"/>
+            </div>
+            <div class="datos">
+                <h3>Datos de Contacto: </h3>
+                <nb-card style="margin-left: 0%; width: 50%;">
+                    <div>
+                        <p class="usuarioDatos"><strong>Nombre:</strong> {{userData.nombre}} {{userData.apellidos}}</p>
+                        <p class="usuarioDatos"><strong>Correo:</strong> {{userData.correo}}</p>
+                        <p class="usuarioDatos"><strong>Teléfono:</strong> {{userData.telefono}}</p>
+                    </div>
+                </nb-card>
+            </div>
+        </nb-card-body>
     </nb-card-body>
 </nb-card>
   
