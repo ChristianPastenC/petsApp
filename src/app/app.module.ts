@@ -17,13 +17,15 @@ import { DashboardComponentsModule } from './dashboard-components/dashboard-comp
 import { HomeComponent } from './home/home.component';
 import { VerIndexComponent } from './ver-index/ver-index.component';
 import { PetDialogComponent } from './pet-dialog/pet-dialog.component';
+import { InfoComponent } from './info/info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     VerIndexComponent,
-    PetDialogComponent
+    PetDialogComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,
