@@ -61,6 +61,10 @@ nb-layout-column {
   align-items: flex-end;
 }
 
+.bar{
+    min-height: 50% !important;
+}
+
 .card-buttons button:nth-child(2) {
   margin-left: 10px;
 }
@@ -72,4 +76,9 @@ nb-layout-column {
 
 img{
   display: inline;
+}
+
+.info p{
+    text-align: left;
+    font-size: 140%;
 }
