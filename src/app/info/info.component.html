@@ -1,88 +1,72 @@
-<header id="bar">
-        <img id="reference" src="assets/info.png">
-</header>
-<body>
-    <nb-card class="info" size="large">
-        <nb-card-header class="title">
-            <h3>¿Por Qué Adoptar Una Mascota?</h3>
-        </nb-card-header>
-        <nb-card-body>
+<nb-layout>
+  <nb-layout-header>
+    <div id="bar">
+      <img id="reference" src="assets/info.png">
+    </div>
+  </nb-layout-header>
+  <nb-layout-column>
+    <nb-card size="giant" class="cardG">
+      <nb-card-header>
+        <h3>¿Por Qué Deberías Adoptar Una Mascota?</h3>
+        <p id="texto"> 
+          <img src="assets/info.jpg" align="left">
+          <br><br>
+          El maltrato y abandono de especies domésticas es la
+          
+          problemática de crueldad animal más visible para la sociedad, 
+          
+          existe una grave situación de sobrepoblación canina y felina 
+          
+          en las calles que se deriva de tres cuestiones principales:
+        </p>
+      </nb-card-header>
+      <nb-card-body class="container">
+        <nb-card size="small" class="infoCard">
+          <nb-card-header>
+            <img src="assets/info1.jpeg"/>
+          </nb-card-header>
+          <nb-card-body>
             <p>
-                El maltrato y abandono de especies domésticas es la 
-                problemática de crueldad animal más visible para la sociedad,
-                existe una grave situación de sobrepoblación canina y felina
-                en las calles que se deriva de tres cuestiones principales:
+              Muchas familias consideran erróneamente a los animales como 
+              objetos o juguetes, por lo que compran o aceptan animales 
+              a manera de "regalo", sobre todo en época decembrina, sin 
+              considerar las implicaciones que conlleva su crianza, por lo 
+              que 8 de cada de 10 mascotas terminan abandonados por las personas 
+              que los tenían bajo su cuidado.
             </p>
+          </nb-card-body>
+        </nb-card>
+        <nb-card size="small" class="infoCard">
+          <nb-card-header>
+            <img src="assets/info2.jpeg"/>
+          </nb-card-header>
+          <nb-card-body>
             <p>
-                1. Muchas familias consideran erróneamente a los animales 
-                como objetos o juguetes, por lo que compran o aceptan 
-                animales a manera de "regalo", sobre todo en época decembrina, 
-                sin considerar las implicaciones que conlleva su crianza, 
-                por lo que 8 de cada de 10 mascotas terminan abandonados por 
-                las personas que los tenían bajo su cuidado.
+              Los prejuicios sociales que consideran que un animal 
+              adoptado "vale menos" que uno por el que se paga, pese 
+              a la irresponsabilidad con la que operan los criadores 
+              y comerciantes de mascotas. Se debe tener en cuenta 
+              que cuando se opta por la adopción, estamos salvando una vida.
             </p>
+          </nb-card-body>
+        </nb-card>
+        <nb-card size="small" class="infoCard">
+          <nb-card-header>
+            <img src="assets/info3.jpeg"/>
+          </nb-card-header>
+          <nb-card-body>
             <p>
-                2. Los prejuicios sociales que consideran que un animal adoptado
-                 "vale menos" que uno por el que se paga, pese a la irresponsabilidad con la que operan los criadores y comerciantes de mascotas. Se debe tener en cuenta que cuando se opta por la adopción, estamos salvando una vida.
+              La falta de información sobre la esterilización de animales 
+              de compañía, dado que el cruce de animales genera miles 
+              de crías a mediano plazo y la gran mayoría no tendrá la 
+              suerte de vivir con una familia responsable. Es necesario 
+              saber que una esterilización les previene enfermedades 
+              relacionadas con su aparato reproductivo y evita el nacimiento 
+              de cachorros indeseados, o que terminarán en manos equivocadas.
             </p>
-            <p>
-                3. La falta de información sobre la esterilización de animales de compañía, dado que el cruce de animales genera miles de crías a mediano plazo y la gran mayoría no tendrá la suerte de vivir con una familia responsable. Es necesario saber que una esterilización les previene enfermedades relacionadas con su aparato reproductivo y evita el nacimiento de cachorros indeseados, o que terminarán en manos equivocadas.
-            </p>
-            <p>
-                Por todo ello, se propone "Buscando un hogar", una aplicación web que busca conectar animales de compañía con personas amantes de los mismos, que quieran brindarles un hogar, por medio de un catálogo en donde podremos encontrar información para su adopción.
-            </p>
-        </nb-card-body>
+          </nb-card-body>
+        </nb-card>    
+      </nb-card-body>
     </nb-card>
-    <nb-layout>
-        <nb-layout-column class="container">
-            <nb-reveal-card class="cardInfo">
-                <nb-card-front>
-                  <nb-card>
-                    <nb-card-body>
-                      Front
-                    </nb-card-body>
-                  </nb-card>
-                </nb-card-front>
-                <nb-card-back>
-                  <nb-card>
-                    <nb-card-body>
-                      Back
-                    </nb-card-body>
-                  </nb-card>
-                </nb-card-back>
-              </nb-reveal-card>
-              <nb-reveal-card class="cardInfo">
-                <nb-card-front>
-                  <nb-card>
-                    <nb-card-body>
-                      Front
-                    </nb-card-body>
-                  </nb-card>
-                </nb-card-front>
-                <nb-card-back>
-                  <nb-card>
-                    <nb-card-body>
-                      Back
-                    </nb-card-body>
-                  </nb-card>
-                </nb-card-back>
-              </nb-reveal-card>
-              <nb-reveal-card class="cardInfo">
-                <nb-card-front>
-                  <nb-card>
-                    <nb-card-body>
-                      Front
-                    </nb-card-body>
-                  </nb-card>
-                </nb-card-front>
-                <nb-card-back>
-                  <nb-card>
-                    <nb-card-body>
-                      Back
-                    </nb-card-body>
-                  </nb-card>
-                </nb-card-back>
-              </nb-reveal-card>
-        </nb-layout-column>
-    </nb-layout>
-</body>
+  </nb-layout-column>
+</nb-layout>
