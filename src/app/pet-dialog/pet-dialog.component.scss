@@ -1,0 +1,36 @@
+nb-card-header {
+    padding: 0px;
+    border-width: 0px;
+    overflow: hidden;
+    height: 50%;
+    text-align: center;
+}
+
+h1,h3{
+    color: dodgerblue;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    max-width: 35%;
+    min-height: 35%;
+}
+
+.lista{
+    display: inline;
+    margin-left: 10%;
+}
+.descripcion{
+    display: flex;
+}
+.datos{
+    text-align: center;
+}
+li{
+    font-size:medium;
+}
+
+.interna{
+    list-style-type: none;
+}

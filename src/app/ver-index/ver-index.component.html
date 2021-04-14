@@ -18,7 +18,7 @@
   </nb-layout-header>
   <nb-layout-column class="container">
       <nb-card *ngFor="let pet of pets" size="small" class="pet" (click)="getDetails(pet.id,pet.data)">
-        <nb-card-header>
+        <nb-card-header >
           <img src="{{ pet.data.foto }}"/>
         </nb-card-header>
         <nb-card-body>

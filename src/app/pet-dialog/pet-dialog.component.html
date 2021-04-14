@@ -1,17 +1,43 @@
 <nb-card>
     <nb-card-header>
-        <img src="{{ petData.foto }}"/>
+        <h1>Información de la Mascota</h1>
     </nb-card-header>
     <nb-card-body>
         <nb-card-body>
-            <p class="h6">{{ petData.nombre }}</p>
-            <p class="subtitle-2">
-                {{ petData.genero }}, {{ petData.color }}, {{ petData.edad }}
-            </p>
-            <p>
-                {{ petData.raza }} <br />
-            </p>
-            </nb-card-body>
+            <div class = "descripcion">
+                <ul class="lista" style="margin-left: 0%;">
+                    <li><p>Nombre: {{ petData.nombre }}</p></li>
+                    <li><p>Edad: {{ petData.edad }}</p></li>
+                    <li><p>Raza: {{petData.raza}}</p></li>
+                    <li><p>Color: {{ petData.color }}</p></li>
+                    <li><p>Género: {{ petData.genero }}</p></li>
+                    <li><p>Registro: {{parsear(petData.f_registro)}}</p></li>
+
+                </ul>
+                <ul class="lista">
+                    <li><p>Características:</p></li>
+                    <li class="interna">
+                        <ul class="interna">
+                            <li><p>Afectuoso: {{petData.afectuoso}}</p></li>
+                            <li><p>Agresivo: {{petData.agresivo}}</p></li>
+                            <li><p>Amigable: {{petData.amigable}}</p></li>
+                            <li><p>Enérgico: {{petData.energia}}</p></li>
+                            <li><p>Juguetón: {{petData.jugueton}}</p></li>
+                        </ul>
+                        
+                    </li>
+                </ul>
+                <img src="{{ petData.foto }}"/>
+            </div>
+            <div class="datos">
+                <h3>Datos de Contacto</h3>
+                <nb-card>
+                    <nb-card-body>
+                        <p>{{userData.nombre}}</p>
+                    </nb-card-body>
+                </nb-card>
+            </div>
+        </nb-card-body>
     </nb-card-body>
 </nb-card>
   

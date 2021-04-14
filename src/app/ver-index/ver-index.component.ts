@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PetServiceService } from '../services/pet-service.service';
+import {UserServiceService} from '../services/user-service.service';
 import { NbDialogService } from '@nebular/theme';
 import { PetDialogComponent } from '../pet-dialog/pet-dialog.component';
 
@@ -11,22 +12,26 @@ import { PetDialogComponent } from '../pet-dialog/pet-dialog.component';
 export class VerIndexComponent implements OnInit {
 
   pets: any[];
+  mascota: any = [];
 
   constructor(
     private firestoreService: PetServiceService,
+    private firestoreUsuarios: UserServiceService,
     private dialog: NbDialogService
   ) { }
 
   ngOnInit(): void {
+
   	this.firestoreService.gets().subscribe((Snapshot) => {
-       this.pets = [];
-       Snapshot.forEach((Data: any) => {
-         this.pets.push({
-           id: Data.payload.doc.id,
-           data: Data.payload.doc.data()
-         });
-       })
+      this.pets = [];
+      Snapshot.forEach((Data: any) => {
+        this.pets.push({
+          id: Data.payload.doc.id,
+          data: Data.payload.doc.data()
+        });
+      })
      });
+
   }
 
   getDetails(id,petData){
