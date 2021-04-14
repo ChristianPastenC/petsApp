@@ -1,1 +1,126 @@
-<p>dar-adopcion works!</p>
+<nb-layout>
+    <nb-layout-header></nb-layout-header>
+    <nb-layout-column>
+        <nb-card>
+            <nb-card-body>
+              <nb-stepper orientation="horizontal">
+                <nb-step [label]="labelOne">
+                  <ng-template #labelOne>Contacto</ng-template>
+                  <h4>Datos de Contacto</h4>
+                  <nb-card>
+                    <nb-card-body class="example-items-col">
+                        <div class="block">
+                            <label class="line">Nombre: </label>
+                            <input type="text" nbInput fullWidth placeholder="Christian Pasten">
+                        </div>
+                        <br><br>
+                        <div class="block">
+                            <label class="line">Teléfono: </label>
+                            <input type="text" nbInput fullWidth placeholder="+52 222 401 28 09">
+                        </div>
+                        <br><br>
+                        <div class="block">
+                            <label class="line">Correo electrónico: </label>
+                            <input type="text" nbInput fullWidth placeholder="example@site.com">
+                        </div>
+                    </nb-card-body>
+                  </nb-card>
+                  <button nbButton disabled nbStepperNext class="button">REGRESAR</button>
+                  <button nbButton nbStepperNext class="button">SIGUIENTE</button>
+                </nb-step>
+                <nb-step [label]="labelTwo">
+                    <ng-template #labelTwo>Información de Mascota</ng-template>
+                    <h4>Datos de la mascota</h4>
+                    <nb-card>
+                      <nb-card-body class="example-items-col">
+                          <div class="block">
+                              <label class="line">Nombre: </label>
+                              <input type="text" nbInput fullWidth placeholder="Pelusa">
+                          </div>
+                          <br><br>
+                          <div class="block">
+                              <label class="line">Edad: </label>
+                              <input type="text" nbInput fullWidth placeholder="Cachorro/Joven/Adulto">
+                          </div>
+                          <br><br>
+                          <div class="block">
+                              <label class="line">Raza: </label>
+                              <input type="text" nbInput fullWidth placeholder="Border Collie">
+                          </div>
+                          <br><br>
+                          <div class="block">
+                              <label class="line">Color: </label>
+                              <input type="text" nbInput fullWidth placeholder="Gris / Café">
+                          </div>
+                          <br><br>
+                          <div class="block">
+                                <label class="line">Género: </label>
+                                <nb-select multiple placeholder="Selecciona Una Opción">
+                                    <nb-option value="1">Macho</nb-option>
+                                    <nb-option value="2">Hembra</nb-option>
+                                </nb-select>
+                          </div>
+                      </nb-card-body>
+                    </nb-card>
+                    <button nbButton nbStepperPrevious class="button">REGRESAR</button>
+                    <button nbButton nbStepperNext class="button">SIGUIENTE</button>
+                  </nb-step>
+                  <nb-step [label]="labelThree">
+                    <ng-template #labelThree>Características</ng-template>
+                    <h4>Datos Generales de la Mascota</h4>
+                    <nb-card>
+                      <nb-card-body class="example-items-col">
+                          <div class="block">
+                              <label class="line">Afectuoso: </label>
+                              <nb-select multiple placeholder="Selecciona Una Opción">
+                                <nb-option value="1">Poco</nb-option>
+                                <nb-option value="2">Medio</nb-option>
+                                <nb-option value="2">Mucho</nb-option>
+                            </nb-select>
+                          </div>
+                          <br><br>
+                          <div class="block">
+                              <label class="line">Agresivo: </label>
+                              <nb-select multiple placeholder="Selecciona Una Opción">
+                                <nb-option value="1">Poco</nb-option>
+                                <nb-option value="2">Medio</nb-option>
+                                <nb-option value="2">Mucho</nb-option>
+                            </nb-select>
+                          </div>
+                          <br><br>
+                          <div class="block">
+                              <label class="line">Amigable: </label>
+                              <nb-select multiple placeholder="Selecciona Una Opción">
+                                <nb-option value="1">Poco</nb-option>
+                                <nb-option value="2">Medio</nb-option>
+                                <nb-option value="2">Mucho</nb-option>
+                            </nb-select>
+                          </div>
+                          <br><br>
+                          <div class="block">
+                              <label class="line">Energético: </label>
+                              <nb-select multiple placeholder="Selecciona Una Opción">
+                                <nb-option value="1">Poco</nb-option>
+                                <nb-option value="2">Medio</nb-option>
+                                <nb-option value="2">Mucho</nb-option>
+                            </nb-select>
+                          </div>
+                          <br><br>
+                          <div class="block">
+                                <label class="line">Juguetón: </label>
+                                <nb-select multiple placeholder="Selecciona Una Opción">
+                                    <nb-option value="1">Poco</nb-option>
+                                    <nb-option value="2">Medio</nb-option>
+                                    <nb-option value="2">Mucho</nb-option>
+                                </nb-select>
+                          </div>
+                      </nb-card-body>
+                    </nb-card>
+                    <button nbButton nbStepperPrevious class="button">REGRESAR</button>
+                    <button nbButton nbStepperNext class="button">FINALIZAR</button>
+                  </nb-step>
+              </nb-stepper>
+            </nb-card-body>
+          </nb-card>
+    </nb-layout-column>
+</nb-layout>

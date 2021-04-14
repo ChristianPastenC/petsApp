@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule, NbCardModule,
-         NbDialogModule, NbSelectModule,
+         NbDialogModule, NbSelectModule, NbStepperModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 
@@ -42,6 +42,7 @@ import { DarAdopcionComponent } from './dar-adopcion/dar-adopcion.component';
     NbCardModule,
     NbDialogModule.forRoot(),
     NbSelectModule,
+    NbStepperModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
