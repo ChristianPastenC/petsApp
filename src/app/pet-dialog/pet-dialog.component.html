@@ -2,27 +2,27 @@
     <nb-card-header>
         <h1>Información de la Mascota</h1>
     </nb-card-header>
-    <nb-card-body>
+    <nb-card-body id="principal">
         <nb-card-body>
             <div class = "descripcion">
                 <ul class="lista" style="margin-left: 0%;">
-                    <li><p>Nombre: {{ petData.nombre }}</p></li>
-                    <li><p>Edad: {{ petData.edad }}</p></li>
-                    <li><p>Raza: {{petData.raza}}</p></li>
-                    <li><p>Color: {{ petData.color }}</p></li>
-                    <li><p>Género: {{ petData.genero }}</p></li>
-                    <li><p>Registro: {{parsear(petData.f_registro)}}</p></li>
+                    <li><p><strong>Nombre:</strong> {{ petData.nombre }}</p></li>
+                    <li><p><strong>Edad:</strong> {{ petData.edad }}</p></li>
+                    <li><p><strong>Raza:</strong> {{petData.raza}}</p></li>
+                    <li><p><strong>Color:</strong> {{ petData.color }}</p></li>
+                    <li><p><strong>Género:</strong> {{ petData.genero }}</p></li>
+                    <li><p><strong>Registro:</strong> {{parsear(petData.f_registro)}}</p></li>
 
                 </ul>
                 <ul class="lista">
-                    <li><p>Características:</p></li>
+                    <li><p><strong>Características:</strong></p></li>
                     <li class="interna">
                         <ul class="interna">
-                            <li><p>Afectuoso: {{petData.afectuoso}}</p></li>
-                            <li><p>Agresivo: {{petData.agresivo}}</p></li>
-                            <li><p>Amigable: {{petData.amigable}}</p></li>
-                            <li><p>Enérgico: {{petData.energia}}</p></li>
-                            <li><p>Juguetón: {{petData.jugueton}}</p></li>
+                            <li><p><strong>Afectuoso:</strong> {{petData.afectuoso}}</p></li>
+                            <li><p><strong>Agresivo:</strong> {{petData.agresivo}}</p></li>
+                            <li><p><strong>Amigable:</strong> {{petData.amigable}}</p></li>
+                            <li><p><strong>Enérgico:</strong> {{petData.energia}}</p></li>
+                            <li><p><strong>Juguetón:</strong> {{petData.jugueton}}</p></li>
                         </ul>
                         
                     </li>
@@ -30,11 +30,13 @@
                 <img src="{{ petData.foto }}"/>
             </div>
             <div class="datos">
-                <h3>Datos de Contacto</h3>
-                <nb-card>
-                    <nb-card-body>
-                        <p>{{userData.nombre}}</p>
-                    </nb-card-body>
+                <h3>Datos de Contacto: </h3>
+                <nb-card style="margin-left: 0%; width: 50%;">
+                    <div>
+                        <p class="usuarioDatos"><strong>Nombre:</strong> {{userData.nombre}} {{userData.apellidos}}</p>
+                        <p class="usuarioDatos"><strong>Correo:</strong> {{userData.correo}}</p>
+                        <p class="usuarioDatos"><strong>Teléfono:</strong> {{userData.telefono}}</p>
+                    </div>
                 </nb-card>
             </div>
         </nb-card-body>
