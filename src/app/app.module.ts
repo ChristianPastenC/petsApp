@@ -6,8 +6,10 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule, NbCardModule,
          NbDialogModule, NbSelectModule, NbStepperModule,
+         NbButtonGroupModule, NbIconModule, NbToggleModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { FormsModule } from '@angular/forms';
 
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
@@ -35,6 +37,7 @@ import { DarAdopcionComponent } from './dar-adopcion/dar-adopcion.component';
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+    FormsModule,
     NbThemeModule.forRoot({ name: 'corporate' }),
     NbLayoutModule,
     NbEvaIconsModule,
@@ -43,6 +46,9 @@ import { DarAdopcionComponent } from './dar-adopcion/dar-adopcion.component';
     NbDialogModule.forRoot(),
     NbSelectModule,
     NbStepperModule,
+    NbButtonGroupModule,
+    NbIconModule,
+    NbToggleModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
