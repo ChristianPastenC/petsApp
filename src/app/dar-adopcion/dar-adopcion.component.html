@@ -73,55 +73,55 @@
                           <div class="block">
                               <label class="line">Afectuoso: </label>
                               <nb-button-group ghost multiple>
-                                <button nbButtonToggle [pressed]="arrayAfectuoso[0]"><nb-icon icon="star"></nb-icon></button>
-                                <button nbButtonToggle [pressed]="arrayAfectuoso[1]"><nb-icon icon="star"></nb-icon></button>
-                                <button nbButtonToggle [pressed]="arrayAfectuoso[2]"><nb-icon icon="star"></nb-icon></button>
-                                <button nbButtonToggle [pressed]="arrayAfectuoso[3]"><nb-icon icon="star"></nb-icon></button>
-                                <button nbButtonToggle [pressed]="arrayAfectuoso[4]"><nb-icon icon="star"></nb-icon></button>
+                                <button nbButtonToggle (click)="afectoA()" [(pressed)]="arrayAfectuoso[0]"><nb-icon icon="star"></nb-icon></button>
+                                <button nbButtonToggle (click)="afectoB()" [(pressed)]="arrayAfectuoso[1]"><nb-icon icon="star"></nb-icon></button>
+                                <button nbButtonToggle (click)="afectoC()" [(pressed)]="arrayAfectuoso[2]"><nb-icon icon="star"></nb-icon></button>
+                                <button nbButtonToggle (click)="afectoD()" [(pressed)]="arrayAfectuoso[3]"><nb-icon icon="star"></nb-icon></button>
+                                <button nbButtonToggle (click)="afectoE()" [(pressed)]="arrayAfectuoso[4]"><nb-icon icon="star"></nb-icon></button>
                               </nb-button-group>
                           </div>
                           <br><br>
                           <div class="block">
                               <label class="line">Agresivo: </label>
                               <nb-button-group multiple ghost>
-                                <button nbButtonToggle pressed><nb-icon icon="star"></nb-icon></button>
-                                <button nbButtonToggle pressed><nb-icon icon="star"></nb-icon></button>
-                                <button nbButtonToggle pressed><nb-icon icon="star"></nb-icon></button>
-                                <button nbButtonToggle><nb-icon icon="star"></nb-icon></button>
-                                <button nbButtonToggle><nb-icon icon="star"></nb-icon></button>
+                                <button nbButtonToggle (click)="agresivoA()" [(pressed)]="arrayAgresivo[0]"><nb-icon icon="star"></nb-icon></button>
+                                <button nbButtonToggle (click)="agresivoB()" [(pressed)]="arrayAgresivo[1]"><nb-icon icon="star"></nb-icon></button>
+                                <button nbButtonToggle (click)="agresivoC()" [(pressed)]="arrayAgresivo[2]"><nb-icon icon="star"></nb-icon></button>
+                                <button nbButtonToggle (click)="agresivoD()" [(pressed)]="arrayAgresivo[3]"><nb-icon icon="star"></nb-icon></button>
+                                <button nbButtonToggle (click)="agresivoE()" [(pressed)]="arrayAgresivo[4]"><nb-icon icon="star"></nb-icon></button>
                               </nb-button-group>
                           </div>
                           <br><br>
                           <div class="block">
                               <label class="line">Amigable: </label>
                               <nb-button-group multiple ghost>
-                                <button nbButtonToggle pressed><nb-icon icon="star"></nb-icon></button>
-                                <button nbButtonToggle pressed><nb-icon icon="star"></nb-icon></button>
-                                <button nbButtonToggle pressed><nb-icon icon="star"></nb-icon></button>
-                                <button nbButtonToggle><nb-icon icon="star"></nb-icon></button>
-                                <button nbButtonToggle><nb-icon icon="star"></nb-icon></button>
+                                <button nbButtonToggle (click)="amigableA()" [(pressed)]="arrayAmigable[0]"><nb-icon icon="star"></nb-icon></button>
+                                <button nbButtonToggle (click)="amigableB()" [(pressed)]="arrayAmigable[1]"><nb-icon icon="star"></nb-icon></button>
+                                <button nbButtonToggle (click)="amigableC()" [(pressed)]="arrayAmigable[2]"><nb-icon icon="star"></nb-icon></button>
+                                <button nbButtonToggle (click)="amigableD()" [(pressed)]="arrayAmigable[3]"><nb-icon icon="star"></nb-icon></button>
+                                <button nbButtonToggle (click)="amigableE()" [(pressed)]="arrayAmigable[4]"><nb-icon icon="star"></nb-icon></button>
                               </nb-button-group>
                           </div>
                           <br><br>
                           <div class="block">
                               <label class="line">Energético: </label>
                               <nb-button-group multiple ghost>
-                                <button nbButtonToggle pressed><nb-icon icon="star"></nb-icon></button>
-                                <button nbButtonToggle pressed><nb-icon icon="star"></nb-icon></button>
-                                <button nbButtonToggle pressed><nb-icon icon="star"></nb-icon></button>
-                                <button nbButtonToggle><nb-icon icon="star"></nb-icon></button>
-                                <button nbButtonToggle><nb-icon icon="star"></nb-icon></button>
+                                <button nbButtonToggle (click)="energA()" [(pressed)]="arrayEnergetico[0]"><nb-icon icon="star"></nb-icon></button>
+                                <button nbButtonToggle (click)="energB()" [(pressed)]="arrayEnergetico[1]"><nb-icon icon="star"></nb-icon></button>
+                                <button nbButtonToggle (click)="energC()" [(pressed)]="arrayEnergetico[2]"><nb-icon icon="star"></nb-icon></button>
+                                <button nbButtonToggle (click)="energD()" [(pressed)]="arrayEnergetico[3]"><nb-icon icon="star"></nb-icon></button>
+                                <button nbButtonToggle (click)="energE()" [(pressed)]="arrayEnergetico[4]"><nb-icon icon="star"></nb-icon></button>
                               </nb-button-group>
                           </div>
                           <br><br>
                           <div class="block">
                                 <label class="line">Juguetón: </label>
                                 <nb-button-group multiple ghost>
-                                    <button nbButtonToggle pressed><nb-icon icon="star"></nb-icon></button>
-                                    <button nbButtonToggle pressed><nb-icon icon="star"></nb-icon></button>
-                                    <button nbButtonToggle pressed><nb-icon icon="star"></nb-icon></button>
-                                    <button nbButtonToggle><nb-icon icon="star"></nb-icon></button>
-                                    <button nbButtonToggle><nb-icon icon="star"></nb-icon></button>
+                                    <button nbButtonToggle (click)="jugueA()" [(pressed)]="arrayJugueton[0]"><nb-icon icon="star"></nb-icon></button>
+                                    <button nbButtonToggle (click)="jugueB()" [(pressed)]="arrayJugueton[1]"><nb-icon icon="star"></nb-icon></button>
+                                    <button nbButtonToggle (click)="jugueC()" [(pressed)]="arrayJugueton[2]"><nb-icon icon="star"></nb-icon></button>
+                                    <button nbButtonToggle (click)="jugueD()" [(pressed)]="arrayJugueton[3]"><nb-icon icon="star"></nb-icon></button>
+                                    <button nbButtonToggle (click)="jugueE()" [(pressed)]="arrayJugueton[4]"><nb-icon icon="star"></nb-icon></button>
                                   </nb-button-group>
                           </div>
                       </nb-card-body>
