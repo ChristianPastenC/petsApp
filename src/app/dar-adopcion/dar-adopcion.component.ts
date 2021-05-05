@@ -13,10 +13,13 @@ export class DarAdopcionComponent implements OnInit {
   arrayAmigable: boolean[];
   arrayEnergetico: boolean[];
   arrayJugueton: boolean[];
+  url: string;
   
   constructor(
     
-  ) { }
+  ) { 
+    this.url = "assets/add.png";
+  }
   
   ngOnInit(): void {
     this.arrayAfectuoso = [false, false, false, false, false];
@@ -24,6 +27,18 @@ export class DarAdopcionComponent implements OnInit {
     this.arrayAmigable = [false, false, false, false, false];
     this.arrayEnergetico = [false, false, false, false, false];
     this.arrayJugueton = [false, false, false, false, false];
+  }
+
+  onSelectFile(event) { 
+      if (event.target.files && event.target.files[0]) {
+        var reader = new FileReader();
+
+        reader.readAsDataURL(event.target.files[0]);
+
+        reader.onload = (event) => {
+          this.url = event.target.result as string;
+        }
+      }
   }
 
   /*

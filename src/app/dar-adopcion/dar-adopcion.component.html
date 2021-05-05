@@ -11,17 +11,17 @@
                     <nb-card-body class="example-items-col">
                         <div class="block">
                             <label class="line">Nombre: </label>
-                            <input type="text" nbInput fullWidth placeholder="Christian Pasten" fieldSize="giant">
+                            <input type="text" nbInput placeholder="Christian Pasten" fieldSize="medium">
                         </div>
                         <br><br>
                         <div class="block">
                             <label class="line">Teléfono: </label>
-                            <input type="text" nbInput fullWidth placeholder="+52 222 401 28 09" fieldSize="giant">
+                            <input type="text" nbInput placeholder="+52 222 401 28 09" fieldSize="medium">
                         </div>
                         <br><br>
                         <div class="block">
                             <label class="line">Correo electrónico: </label>
-                            <input type="text" nbInput fullWidth placeholder="example@site.com" fieldSize="giant">
+                            <input type="text" nbInput placeholder="example@site.com" fieldSize="medium">
                         </div>
                     </nb-card-body>
                   </nb-card>
@@ -33,32 +33,37 @@
                     <h4>Datos de la mascota</h4>
                     <nb-card>
                       <nb-card-body class="example-items-col">
-                          <div class="block">
+                          <div id="infoItems">
                               <label class="line">Nombre: </label>
-                              <input type="text" nbInput fullWidth placeholder="Pelusa" fieldSize="giant">
-                          </div>
-                          <br><br>
-                          <div class="block">
+                              <input type="text" nbInput placeholder="Pelusa" fieldSize="medium">
+                          
+                              <br><br>
+                          
                               <label class="line">Edad: </label>
-                              <input type="text" nbInput fullWidth placeholder="Cachorro/Joven/Adulto" fieldSize="giant">
-                          </div>
-                          <br><br>
-                          <div class="block">
+                              <input type="text" nbInput placeholder="Cachorro/Joven/Adulto" fieldSize="medium">
+                          
+                              <br><br>
+                          
                               <label class="line">Raza: </label>
-                              <input type="text" nbInput fullWidth placeholder="Border Collie" fieldSize="giant">
-                          </div>
-                          <br><br>
-                          <div class="block">
+                              <input type="text" nbInput placeholder="Border Collie" fieldSize="medium">
+                          
+                              <br><br>
+                          
                               <label class="line">Color: </label>
-                              <input type="text" nbInput fullWidth placeholder="Gris / Café" fieldSize="giant">
-                          </div>
-                          <br><br>
-                          <div class="block">
+                              <input type="text" nbInput fieldSize="medium" placeholder="Gris / Café" >
+                          
+                              <br><br>
+                          
                                 <label class="line">Género: </label>
-                                <nb-select multiple placeholder="Selecciona Una Opción">
+                                <nb-select multiple placeholder=" -- Selecciona Una Opción -- ">
                                     <nb-option value="1">Macho</nb-option>
                                     <nb-option value="2">Hembra</nb-option>
                                 </nb-select>
+                            </div>
+                          <div class="block" id="inputImg">
+                            <img [src]="url"> <br/>
+                            <input type='file' name="file" id="file" class="inputfile" (change)="onSelectFile($event)">
+                            <label for="file" class="button"><nb-icon icon="arrow-circle-up-outline"></nb-icon>Selecciona una Imagen</label>
                           </div>
                       </nb-card-body>
                     </nb-card>
@@ -80,7 +85,7 @@
                                 <button nbButtonToggle (click)="afectoE()" [(pressed)]="arrayAfectuoso[4]"><nb-icon icon="star"></nb-icon></button>
                               </nb-button-group>
                           </div>
-                          <br><br>
+                          <br>
                           <div class="block">
                               <label class="line">Agresivo: </label>
                               <nb-button-group multiple ghost>
@@ -91,7 +96,7 @@
                                 <button nbButtonToggle (click)="agresivoE()" [(pressed)]="arrayAgresivo[4]"><nb-icon icon="star"></nb-icon></button>
                               </nb-button-group>
                           </div>
-                          <br><br>
+                          <br>
                           <div class="block">
                               <label class="line">Amigable: </label>
                               <nb-button-group multiple ghost>
@@ -102,7 +107,7 @@
                                 <button nbButtonToggle (click)="amigableE()" [(pressed)]="arrayAmigable[4]"><nb-icon icon="star"></nb-icon></button>
                               </nb-button-group>
                           </div>
-                          <br><br>
+                          <br>
                           <div class="block">
                               <label class="line">Energético: </label>
                               <nb-button-group multiple ghost>
@@ -113,7 +118,7 @@
                                 <button nbButtonToggle (click)="energE()" [(pressed)]="arrayEnergetico[4]"><nb-icon icon="star"></nb-icon></button>
                               </nb-button-group>
                           </div>
-                          <br><br>
+                          <br>
                           <div class="block">
                                 <label class="line">Juguetón: </label>
                                 <nb-button-group multiple ghost>

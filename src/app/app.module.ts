@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule, NbCardModule,
          NbDialogModule, NbSelectModule, NbStepperModule,
          NbButtonGroupModule, NbIconModule, NbToggleModule,
+         NbInputModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { FormsModule } from '@angular/forms';
@@ -49,6 +50,7 @@ import { DarAdopcionComponent } from './dar-adopcion/dar-adopcion.component';
     NbButtonGroupModule,
     NbIconModule,
     NbToggleModule,
+    NbInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
