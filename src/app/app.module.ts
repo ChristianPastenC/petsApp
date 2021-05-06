@@ -7,10 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule, NbCardModule,
          NbDialogModule, NbSelectModule, NbStepperModule,
          NbButtonGroupModule, NbIconModule, NbToggleModule,
-         NbInputModule,
+         NbInputModule, NbToastrModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
@@ -39,6 +39,7 @@ import { DarAdopcionComponent } from './dar-adopcion/dar-adopcion.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     FormsModule,
+    ReactiveFormsModule,
     NbThemeModule.forRoot({ name: 'corporate' }),
     NbLayoutModule,
     NbEvaIconsModule,
@@ -51,6 +52,7 @@ import { DarAdopcionComponent } from './dar-adopcion/dar-adopcion.component';
     NbIconModule,
     NbToggleModule,
     NbInputModule,
+    NbToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

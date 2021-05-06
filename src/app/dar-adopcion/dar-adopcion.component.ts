@@ -1,4 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { NbToastrService, NbComponentStatus } from '@nebular/theme';
 
 @Component({
   selector: 'app-dar-adopcion',
@@ -13,15 +15,31 @@ export class DarAdopcionComponent implements OnInit {
   arrayAmigable: boolean[];
   arrayEnergetico: boolean[];
   arrayJugueton: boolean[];
-  url: string;
-  
+  url: string;  
+  linearMode = true;
+  contactForm: FormGroup;
+  infoForm: FormGroup;
+
   constructor(
-    
-  ) { 
+    private fb: FormBuilder,
+    private toastrService: NbToastrService    
+) { 
     this.url = "assets/add.png";
   }
   
   ngOnInit(): void {
+    this.contactForm = this.fb.group({
+      nomContact: ['', Validators.required],
+      telContact: ['', Validators.compose([Validators.pattern(/^-?(0|[1-9]\d*)?$/), Validators.required])],
+      emailContact: ['', Validators.compose([Validators.email, Validators.required])],
+    });
+    this.infoForm = this.fb.group({
+      nomInfo: ['', Validators.required],
+      ageInfo: ['', Validators.required],
+      razaInfo: ['', Validators.required],
+      colorInfo: ['', Validators.required],
+      genreInfo: ['', Validators.required],
+    });
     this.arrayAfectuoso = [false, false, false, false, false];
     this.arrayAgresivo = [false, false, false, false, false];
     this.arrayAmigable = [false, false, false, false, false];
@@ -41,6 +59,19 @@ export class DarAdopcionComponent implements OnInit {
       }
   }
 
+  toggleLinearMode() {
+    this.linearMode = !this.linearMode;
+  }
+
+  onContactSubmit(status: NbComponentStatus, position, preventDuplicates, destroyByClick) {
+    this.contactForm.markAsDirty();
+    this.toastrService.show("Advertencia", 'Asegúrate de llenar todos los campos', { status, position, preventDuplicates, destroyByClick });
+  }
+  onInfoSubmit(status: NbComponentStatus, position, preventDuplicates, destroyByClick) {
+    this.contactForm.markAsDirty();
+    //let position = 'top-left';
+    this.toastrService.show("Advertencia", 'Asegúrate de llenar todos los campos', { status, position, preventDuplicates, destroyByClick });
+  }
   /*
     ----------------------------------------------------------------------
     ----------------------------------------------------------------------
