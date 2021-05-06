@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { NbToastrService, NbComponentStatus } from '@nebular/theme';
+import {UserServiceService} from '../services/user-service.service';
+
 
 @Component({
   selector: 'app-dar-adopcion',
@@ -22,23 +24,24 @@ export class DarAdopcionComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private toastrService: NbToastrService    
+    private toastrService: NbToastrService,
+    private usrService: UserServiceService, 
 ) { 
     this.url = "assets/add.png";
   }
   
   ngOnInit(): void {
     this.contactForm = this.fb.group({
-      nomContact: ['', Validators.required],
-      telContact: ['', Validators.compose([Validators.pattern(/^-?(0|[1-9]\d*)?$/), Validators.required])],
-      emailContact: ['', Validators.compose([Validators.email, Validators.required])],
+      nombre: ['', Validators.required],
+      telefono: ['', Validators.compose([Validators.pattern(/^-?(0|[1-9]\d*)?$/), Validators.required])],
+      correo: ['', Validators.compose([Validators.email, Validators.required])],
     });
     this.infoForm = this.fb.group({
-      nomInfo: ['', Validators.required],
-      ageInfo: ['', Validators.required],
-      razaInfo: ['', Validators.required],
-      colorInfo: ['', Validators.required],
-      genreInfo: ['', Validators.required],
+      nombre: ['', Validators.required],
+      edad: ['', Validators.required],
+      raza: ['', Validators.required],
+      color: ['', Validators.required],
+      genero: ['', Validators.required],
     });
     this.arrayAfectuoso = [false, false, false, false, false];
     this.arrayAgresivo = [false, false, false, false, false];
@@ -67,11 +70,186 @@ export class DarAdopcionComponent implements OnInit {
     this.contactForm.markAsDirty();
     this.toastrService.show("Advertencia", 'Asegúrate de llenar todos los campos', { status, position, preventDuplicates, destroyByClick });
   }
+
   onInfoSubmit(status: NbComponentStatus, position, preventDuplicates, destroyByClick) {
     this.contactForm.markAsDirty();
     //let position = 'top-left';
     this.toastrService.show("Advertencia", 'Asegúrate de llenar todos los campos', { status, position, preventDuplicates, destroyByClick });
   }
+
+  getScore(){
+    let gralData = [];
+    var afecto = 0, agresivo = 0, amigable = 0, energetico = 0, jugueton = 0;
+    for(var i=0;i<this.arrayAfectuoso.length;i++){
+      if(this.arrayAfectuoso[i] == true){
+        afecto += 1;
+      }else{
+        break;
+      }
+    }
+    
+    for(var i= 0;i<this.arrayAgresivo.length;i++){
+      if(this.arrayAgresivo[i] == true){
+        agresivo += 1;
+      }else{
+        break;
+      }
+    }
+    for(var i=0;i<this.arrayAmigable.length;i++){
+      if(this.arrayAmigable[i] == true){
+        amigable += 1;
+      }else{
+        break;
+      }
+    }
+    for(var i=0;i<this.arrayEnergetico.length;i++){
+      if(this.arrayEnergetico[i] == true){
+        energetico += 1;
+      }else{
+        break;
+      }
+    }
+    for(var i=0;i<this.arrayJugueton.length;i++){
+      if(this.arrayJugueton[i] == true){
+        jugueton += 1;
+      }else{
+        break;
+      }
+    }
+    
+    switch(afecto){
+      case 0:
+        gralData['afectuoso'] = 'Nulo';
+        break;
+      case 1:
+        gralData['afectuoso'] = 'Muy poco';
+        break;
+      case 2:
+        gralData['afectuoso'] = 'Poco';
+        break;
+      case 3:
+        gralData['afectuoso'] = 'Medio';
+        break;
+      case 4:
+        gralData['afectuoso'] = 'Suficiente';
+        break;
+      case 5:
+        gralData['afectuoso'] = 'Mucho';
+        break;
+    }
+    switch(agresivo){
+      case 0:
+        gralData['agresivo'] = 'Nulo';
+        break;
+      case 1:
+        gralData['agresivo'] = 'Muy poco';
+        break;
+      case 2:
+        gralData['agresivo'] = 'Poco';
+        break;
+      case 3:
+        gralData['agresivo'] = 'Medio';
+        break;
+      case 4:
+        gralData['agresivo'] = 'Suficiente';
+        break;
+      case 5:
+        gralData['agresivo'] = 'Mucho';
+        break;
+    }
+    switch(amigable){
+      case 0:
+        gralData['amigable'] = 'Nulo';
+        break;
+      case 1:
+        gralData['amigable'] = 'Muy poco';
+        break;
+      case 2:
+        gralData['amigable'] = 'Poco';
+        break;
+      case 3:
+        gralData['amigable'] = 'Medio';
+        break;
+      case 4:
+        gralData['amigable'] = 'Suficiente';
+        break;
+      case 5:
+        gralData['amigable'] = 'Mucho';
+        break;
+    }
+    switch(energetico){
+      case 0:
+        gralData['energia'] = 'Nulo';
+        break;
+      case 1:
+        gralData['energia'] = 'Muy poco';
+        break;
+      case 2:
+        gralData['energia'] = 'Poco';
+        break;
+      case 3:
+        gralData['energia'] = 'Medio';
+        break;
+      case 4:
+        gralData['energia'] = 'Suficiente';
+        break;
+      case 5:
+        gralData['energia'] = 'Mucho';
+        break;
+    }
+    switch(jugueton){
+      case 0:
+        gralData['jugueton'] = 'Nulo';
+        break;
+      case 1:
+        gralData['jugueton'] = 'Muy poco';
+        break;
+      case 2:
+        gralData['jugueton'] = 'Poco';
+        break;
+      case 3:
+        gralData['jugueton'] = 'Medio';
+        break;
+      case 4:
+        gralData['jugueton'] = 'Suficiente';
+        break;
+      case 5:
+        gralData['jugueton'] = 'Mucho';
+        break;
+    }
+  return gralData;
+  }
+  
+  jsonConcat(j1, j2) {
+    for (var key in j2) {
+     j1[key] = j2[key];
+    }
+    return j1;
+   }
+
+  sendData(){
+    var contact = this.contactForm.value;
+    var info = this.infoForm.value;
+    var gral = this.getScore();
+    var petData = this.jsonConcat(info,gral);
+    /*console.log('Datos a guardar ...');
+    console.log(contact['nombre']);
+    console.log(contact['telefono']);
+    console.log(contact['correo']);
+    console.log(info['nombre']);
+    console.log(info['edad']);
+    console.log(info['raza']);
+    console.log(info['color']);
+    console.log(info['genero']);
+    console.log(gral['afectuoso']);
+    console.log(gral['agresivo']);
+    console.log(gral['amigable']);
+    console.log(gral['energia']);
+    console.log(gral['jugueton']);
+    console.log(petData);*/
+    this.usrService.insertData(contact,petData);
+  }
+
   /*
     ----------------------------------------------------------------------
     ----------------------------------------------------------------------

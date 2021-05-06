@@ -15,4 +15,9 @@ export class PetServiceService {
   public gets() {
     return this.firestore.collection('mascota').snapshotChanges();
   }
+  
+  //Crea una nueva mascota
+  public createPet(data: {nombre: string}) {
+    return this.firestore.collection('mascota').add(data);
+  }
 }

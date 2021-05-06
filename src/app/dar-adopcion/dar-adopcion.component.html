@@ -14,7 +14,7 @@
                     <input type="text" nbInput 
                       placeholder="Christian Pasten"
                       fieldSize="medium"
-                      formControlName="nomContact">
+                      formControlName="nombre">
                   </div>
                   <br><br>
                   <div class="block">
@@ -22,7 +22,7 @@
                     <input type="text" nbInput 
                       placeholder="222 401 28 09"
                       fieldSize="medium"
-                      formControlName="telContact">
+                      formControlName="telefono">
                   </div>
                   <br><br>
                   <div class="block">
@@ -30,7 +30,7 @@
                     <input type="text" nbInput 
                       placeholder="example@site.com" 
                       fieldSize="medium"
-                      formControlName="emailContact">
+                      formControlName="correo">
                   </div>
                   <br><br>
                   <button nbButton disabled nbStepperPrevious class="button">REGRESAR</button>
@@ -49,33 +49,33 @@
                     <input type="text" nbInput 
                       placeholder="Pelusa" 
                       fieldSize="medium"
-                      formControlName="nomInfo">
+                      formControlName="nombre">
                     <br><br>
                     <label class="line">Edad: </label>
                     <nb-select placeholder=" -- Selecciona Una Opción -- "
-                      formControlName="ageInfo">
-                      <nb-option value="1">Cachorro</nb-option>
-                      <nb-option value="2">Jóven</nb-option>
-                      <nb-option value="3">Adulto</nb-option>
+                      formControlName="edad">
+                      <nb-option value="Cachorro">Cachorro</nb-option>
+                      <nb-option value="Joven">Jóven</nb-option>
+                      <nb-option value="Adulto">Adulto</nb-option>
                     </nb-select>
                     <br><br>
                     <label class="line">Raza: </label>
                     <input type="text" nbInput
                       placeholder="Border Collie"
                       fieldSize="medium"
-                      formControlName="razaInfo">
+                      formControlName="raza">
                     <br><br>
                     <label class="line">Color: </label>
                     <input type="text" nbInput
                       fieldSize="medium"
                       placeholder="Gris / Café" 
-                      formControlName="colorInfo">
+                      formControlName="color">
                     <br><br>
                     <label class="line">Género: </label>
                     <nb-select placeholder=" -- Selecciona Una Opción -- "
-                      formControlName="genreInfo">
-                      <nb-option value="1">Macho</nb-option>
-                      <nb-option value="2">Hembra</nb-option>
+                      formControlName="genero">
+                      <nb-option value="Macho">Macho</nb-option>
+                      <nb-option value="Hembra">Hembra</nb-option>
                     </nb-select>
                   </div>
                   <div class="block" id="inputImg">
@@ -151,7 +151,7 @@
               </nb-card-body>
             </nb-card>
             <button nbButton nbStepperPrevious class="button">REGRESAR</button>
-            <button nbButton nbStepperNext class="button">FINALIZAR</button>
+            <button nbButton nbStepperNext (click)="sendData()" class="button">FINALIZAR</button>
           </nb-step>
         </nb-stepper>
       </nb-card-body>
