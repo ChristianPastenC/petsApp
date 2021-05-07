@@ -255,7 +255,6 @@ export class DarAdopcionComponent implements OnInit {
       console.log(gral['jugueton']);
       console.log(petData);*/
       this.usrService.insertData(contact,petData, petData['foto']);
-      window.location.reload();
     }else {
       return;
     }
