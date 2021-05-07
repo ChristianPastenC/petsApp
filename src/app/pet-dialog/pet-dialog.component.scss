@@ -1,52 +1,32 @@
-
-nb-card-header {
-    padding: 0px;
-    border-width: 0px;
+nb-card {
+    border: 0px;
+    border-radius: 18px;
     overflow: hidden;
-    height: 8%;
-    text-align: center;
-    margin-bottom: 0%;
-}
-nb-card{
-    width: 70%;
-    height: 100%;
-    margin-left: 15%;
-}
-h1,h3{
-    color: dodgerblue;
 }
 
-img {
-    display: block;
-    margin-left: 18%;
-    max-width: 30%;
-    min-height: 30%;
+nb-card-body {
+    padding: 0;
+    width: 993px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: 322px auto;
 }
 
-.lista{
-    display: inline;
-    margin-left: 8%;
-}
-.descripcion{
-    display: flex;
-}
 .datos{
-    text-align: left;
-}
-.datos > h3{
-    margin-bottom: 5px;
-}
-.datos > nb-card{
-    margin-bottom: 0%;
-}
-li > p{
-    font-size:medium;
+    padding-left: 10px;
+    margin-left: 10px;
 }
 
-.interna{
-    list-style-type: none;
+img{
+    float: right;
+    width: 540px;
+    height: 600px;
 }
 
-.usuarioDatos{
-    font-size: larger;
+p strong {
+    color:dodgerblue;
+}
+
+#features{
+    display: inline-block;
 }

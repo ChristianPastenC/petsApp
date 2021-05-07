@@ -12,6 +12,8 @@ export class PetDialogComponent implements OnInit {
   users: any[];
   user: string = "";
   userData: any = [];
+  nIcons = [];
+  auxFeature: any = ['afecto','agresivo','amigable','energia','jugueton'];
 
   constructor(
     private firestoreService: UserServiceService,
@@ -34,9 +36,12 @@ export class PetDialogComponent implements OnInit {
       this.userData = this.users[index].data;
       console.log(this.userData.nombre);
     });
-    
-    
-    
+
+    this.auxFeature['afecto'] = this.arrayStars(this.getNStars(this.petData.afectuoso));
+    this.auxFeature['agresivo'] = this.arrayStars(this.getNStars(this.petData.agresivo));
+    this.auxFeature['amigable'] = this.arrayStars(this.getNStars(this.petData.amigable));
+    this.auxFeature['energia'] = this.arrayStars(this.getNStars(this.petData.energia));
+    this.auxFeature['jugueton'] = this.arrayStars(this.getNStars(this.petData.jugueton));
   }
 
   parsear(fecha){
@@ -46,6 +51,39 @@ export class PetDialogComponent implements OnInit {
 
   getUser(us){
     return us;
+  }
+
+  getNStars(feature){
+    let nStars = 0;
+    switch(feature){
+      case 'Nulo':
+        nStars = 0;
+        break;
+      case 'Muy Poco':
+        nStars = 1;
+        break;
+      case 'Poco':
+        nStars = 2;
+        break;
+      case 'Medio':
+        nStars = 3;
+        break;
+      case 'Suficiente':
+        nStars = 4;
+        break;
+      case 'Mucho':
+        nStars = 5;
+        break;
+    }
+  return nStars;
+  }
+
+  arrayStars(n){
+    var array = new Array();
+    for(var i = 0; i < n; i++){
+      array.push('star');
+    }
+    return array;
   }
 
 }
