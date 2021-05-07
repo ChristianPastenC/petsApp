@@ -17,7 +17,8 @@ export class DarAdopcionComponent implements OnInit {
   arrayAmigable: boolean[];
   arrayEnergetico: boolean[];
   arrayJugueton: boolean[];
-  url: string;  
+  url: string;
+  auxPicture: File;
   linearMode = true;
   contactForm: FormGroup;
   infoForm: FormGroup;
@@ -54,6 +55,7 @@ export class DarAdopcionComponent implements OnInit {
       if (event.target.files && event.target.files[0]) {
         var reader = new FileReader();
 
+        this.auxPicture = event.target.files[0];
         reader.readAsDataURL(event.target.files[0]);
 
         reader.onload = (event) => {
@@ -228,26 +230,35 @@ export class DarAdopcionComponent implements OnInit {
    }
 
   sendData(){
-    var contact = this.contactForm.value;
-    var info = this.infoForm.value;
-    var gral = this.getScore();
-    var petData = this.jsonConcat(info,gral);
-    /*console.log('Datos a guardar ...');
-    console.log(contact['nombre']);
-    console.log(contact['telefono']);
-    console.log(contact['correo']);
-    console.log(info['nombre']);
-    console.log(info['edad']);
-    console.log(info['raza']);
-    console.log(info['color']);
-    console.log(info['genero']);
-    console.log(gral['afectuoso']);
-    console.log(gral['agresivo']);
-    console.log(gral['amigable']);
-    console.log(gral['energia']);
-    console.log(gral['jugueton']);
-    console.log(petData);*/
-    this.usrService.insertData(contact,petData);
+    var r = confirm("¿Está seguro de guardar los datos?");
+    if (r == true) {
+      var contact = this.contactForm.value;
+      var info = this.infoForm.value;
+      var gral = this.getScore();
+      var petData = this.jsonConcat(info,gral);
+      if(this.url != "assets/add.png"){
+        petData['foto'] = this.auxPicture;
+      }
+      /*console.log('Datos a guardar ...');
+      console.log(contact['nombre']);
+      console.log(contact['telefono']);
+      console.log(contact['correo']);
+      console.log(info['nombre']);
+      console.log(info['edad']);
+      console.log(info['raza']);
+      console.log(info['color']);
+      console.log(info['genero']);
+      console.log(gral['afectuoso']);
+      console.log(gral['agresivo']);
+      console.log(gral['amigable']);
+      console.log(gral['energia']);
+      console.log(gral['jugueton']);
+      console.log(petData);*/
+      this.usrService.insertData(contact,petData, petData['foto']);
+      window.location.reload();
+    }else {
+      return;
+    }
   }
 
   /*
