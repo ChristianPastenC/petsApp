@@ -45,6 +45,14 @@
               <nb-card-body>
                 <form [formGroup]="infoForm" (ngSubmit)="onInfoSubmit('warning','top-left', true, true)">
                   <div id="infoItems">
+                    <label class="line">Especie: </label>
+                    <nb-select placeholder=" -- Selecciona Una Opción -- "
+                      formControlName="tipo">
+                      <nb-option value="Gato">Felino</nb-option>
+                      <nb-option value="Perro">Canino</nb-option>
+                      <nb-option value="Otro">Otro</nb-option>
+                    </nb-select>
+                    <br><br>
                     <label class="line">Nombre: </label>
                     <input type="text" nbInput 
                       placeholder="Pelusa" 

@@ -12,6 +12,7 @@ import { PetDialogComponent } from '../pet-dialog/pet-dialog.component';
 export class VerIndexComponent implements OnInit {
 
   pets: any[];
+  filterData: any[];
 
   constructor(
     private firestoreService: PetServiceService,
@@ -28,8 +29,8 @@ export class VerIndexComponent implements OnInit {
           data: Data.payload.doc.data()
         });
       })
+      this.filterData = this.pets;
      });
-
   }
 
   getDetails(id,petData,user){
@@ -39,4 +40,42 @@ export class VerIndexComponent implements OnInit {
       },
     });
   }
+
+  filtroTipo($event){
+    if($event == 'Gato'){
+      this.filterData.sort((a,b) => {
+        if(a.data.tipo < b.data.tipo) { return -1; }
+        if(a.data.tipo > b.data.tipo) { return 1; }
+        return 0;
+      });
+    }else if($event == 'Perro'){
+      this.filterData.sort((a,b) => {
+        if(a.data.tipo > b.data.tipo) { return -1; }
+        if(a.data.tipo < b.data.tipo) { return 1; }
+        return 0;
+      });
+    }else{
+      this.filterData = this.pets;
+    }  
+  }
+
+  filtroSexo($event){
+    if($event == 'Hembra'){
+      this.filterData.sort((a,b) => {
+        if(a.data.genero < b.data.genero) { return -1; }
+        if(a.data.genero > b.data.genero) { return 1; }
+        return 0;
+      });
+    }else if($event == 'Macho'){
+      this.filterData.sort((a,b) => {
+        if(a.data.genero > b.data.genero) { return -1; }
+        if(a.data.genero < b.data.genero) { return 1; }
+        return 0;
+      });
+    }else{
+      this.filterData = this.pets;
+    }
+  }
+
+
 }

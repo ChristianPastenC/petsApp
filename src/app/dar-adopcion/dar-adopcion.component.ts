@@ -38,6 +38,7 @@ export class DarAdopcionComponent implements OnInit {
       correo: ['', Validators.compose([Validators.email, Validators.required])],
     });
     this.infoForm = this.fb.group({
+      tipo: ['', Validators.required],
       nombre: ['', Validators.required],
       edad: ['', Validators.required],
       raza: ['', Validators.required],

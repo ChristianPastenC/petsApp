@@ -37,7 +37,7 @@ export class UserServiceService {
   }
 
   public insertData(userData: {nombre: string, telefono: string, correo: string}, 
-                    petData: {nombre:string,edad:string,raza:string,color:string,
+                    petData: {tipo:string,nombre:string,edad:string,raza:string,color:string,
                               genero:string,f_registro:string,afectuoso:string,foto:string,
                               agresivo:string,amigable:string,energia:string,jugueton:string,
                               adoptador:string},img:File)
