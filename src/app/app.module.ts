@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule, NbCardModule,
          NbDialogModule, NbSelectModule, NbStepperModule,
          NbButtonGroupModule, NbIconModule, NbToggleModule,
-         NbInputModule, NbToastrModule,
+         NbInputModule, NbToastrModule, NbButtonModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -55,6 +55,7 @@ import { EditardialogComponent } from './editardialog/editardialog.component';
     NbToggleModule,
     NbInputModule,
     NbToastrModule.forRoot(),
+    NbButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

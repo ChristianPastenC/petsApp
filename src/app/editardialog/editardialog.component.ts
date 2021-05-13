@@ -26,6 +26,9 @@ export class EditardialogComponent implements OnInit {
   infoForm: FormGroup;
   contacto: FormGroup;
 
+  url: string;
+  auxPicture: File;
+
   constructor(
     private firestoreService: UserServiceService,
     private fb: FormBuilder,
@@ -62,6 +65,8 @@ export class EditardialogComponent implements OnInit {
       edad: [this.petData.edad, Validators.required],
       raza: [this.petData.raza, Validators.required]
     });
+
+    this.url = this.petData.foto;
   }
 
   jsonConcat(j1, j2) {
@@ -705,5 +710,17 @@ export class EditardialogComponent implements OnInit {
         this.arrayJugueton[3] = false;
       }
     }
-  
+
+    onSelectFile(event) { 
+      if (event.target.files && event.target.files[0]) {
+        var reader = new FileReader();
+
+        this.auxPicture = event.target.files[0];
+        reader.readAsDataURL(event.target.files[0]);
+
+        reader.onload = (event) => {
+          this.url = event.target.result as string;
+        }
+      }
+  }
 }

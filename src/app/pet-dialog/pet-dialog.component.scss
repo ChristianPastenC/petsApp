@@ -6,10 +6,12 @@ nb-card {
 
 nb-card-body {
     padding: 0;
-    width: 993px;
+    width: 996px;
+    min-width: 996px;
     height: 600px;
+    min-height: 600px;
     display: grid;
-    grid-template-columns: 322px auto;
+    grid-template-columns: 450px auto;
 }
 
 .datos{
@@ -27,10 +29,13 @@ p strong {
     color:dodgerblue;
 }
 
-#features{
-    display: inline-block;
+.features{
+    //display: inline-block;
+    padding-bottom: 15px;
+    //padding-top: 10px;
 }
-button{
+
+/*button{
     background-color: dodgerblue;
     color: white;
     border-radius: 15px;
@@ -41,4 +46,8 @@ button{
     text-decoration: none;
     display: inline-block;
     font-size: 16px
+}*/
+
+.botones{
+    float: right;
 }
