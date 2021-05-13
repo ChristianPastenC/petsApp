@@ -23,6 +23,7 @@ import { PetDialogComponent } from './pet-dialog/pet-dialog.component';
 import { InfoComponent } from './info/info.component';
 import { DarAdopcionComponent } from './dar-adopcion/dar-adopcion.component';
 import { EditardialogComponent } from './editardialog/editardialog.component';
+import { CarouselComponent } from './carousel/carousel.component'
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { EditardialogComponent } from './editardialog/editardialog.component';
     PetDialogComponent,
     InfoComponent,
     DarAdopcionComponent,
-    EditardialogComponent
+    EditardialogComponent,
+    CarouselComponent,
   ],
   imports: [
     BrowserModule,

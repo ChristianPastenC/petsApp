@@ -11,10 +11,10 @@ import  {
 import { FooterComponentComponent } from './footer-component/footer-component.component';
 import { HeaderComponentComponent } from './header-component/header-component.component';
 import { RouterModule } from '@angular/router';
-import { CarouselComponent } from './carousel/carousel.component';
+//import { CarouselComponent } from './carousel/carousel.component';
 
 @NgModule({
-  declarations: [FooterComponentComponent, HeaderComponentComponent, CarouselComponent],
+  declarations: [FooterComponentComponent, HeaderComponentComponent],
   imports: [
     CommonModule,
 
@@ -30,7 +30,7 @@ import { CarouselComponent } from './carousel/carousel.component';
   exports:[
     HeaderComponentComponent,
     FooterComponentComponent,
-    CarouselComponent,
+    //CarouselComponent,
   ]
 })
 export class DashboardComponentsModule { }
