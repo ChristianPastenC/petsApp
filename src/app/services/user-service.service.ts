@@ -62,4 +62,12 @@ export class UserServiceService {
     console.log('auxID' + this.auxID);
     return this.auxID;
   }
+
+  public updateData(iduser, phone, idpet,
+                    petData: {edad:string,raza:string,afectuoso:string,
+                              agresivo:string,amigable:string,energia:string,jugueton:string})
+  {
+    this.firestore.collection('usuario').doc(iduser).update({telefono : phone});
+    this.firestore.collection('mascota').doc(idpet).update(petData);
+  }
 }

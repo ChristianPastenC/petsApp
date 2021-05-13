@@ -21,16 +21,7 @@ export class VerIndexComponent implements OnInit {
 
   ngOnInit(): void {
 
-  	this.firestoreService.gets().subscribe((Snapshot) => {
-      this.pets = [];
-      Snapshot.forEach((Data: any) => {
-        this.pets.push({
-          id: Data.payload.doc.id,
-          data: Data.payload.doc.data()
-        });
-      })
-      this.filterData = this.pets;
-     });
+  	this.getpets();
   }
 
   getDetails(id,petData,user){
@@ -39,6 +30,7 @@ export class VerIndexComponent implements OnInit {
         id,petData,user
       },
     });
+    this.getpets();
   }
 
   filtroTipo($event){
@@ -77,5 +69,17 @@ export class VerIndexComponent implements OnInit {
     }
   }
 
+  getpets(){
+    this.firestoreService.gets().subscribe((Snapshot) => {
+      this.pets = [];
+      Snapshot.forEach((Data: any) => {
+        this.pets.push({
+          id: Data.payload.doc.id,
+          data: Data.payload.doc.data()
+        });
+      })
+      this.filterData = this.pets;
+     });
+  }
 
 }

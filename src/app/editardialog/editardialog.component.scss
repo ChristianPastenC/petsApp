@@ -1,0 +1,83 @@
+nb-card {
+    border: 0px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+nb-card-body {
+    padding: 0;
+    width: 996px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: 498px auto;
+}
+
+img{
+    //float: right;
+    //padding-top: 10px;
+    //padding-right: 10px;
+    //padding-left: 10px;
+    float: left;
+    width: 470px;
+    height: 600px;
+}
+
+.left h3{
+    padding-left: 10px;
+}
+
+/*nb-button-group{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}*/
+
+.line{
+    display: inline-block;
+    text-align: left;
+    width: 200px;
+}
+
+#btn{
+    float: right;
+    padding-right: 10px;
+    //padding-bottom: 10px;
+    //position: absolute;
+    //bottom: 0px;
+}
+
+#inputImg{
+    float:right;
+    display: block;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+    font-size: 20px;
+    width: 450px;
+}
+
+.inputfile + label:hover {
+    background-color: rgba(dodgerblue, $alpha: 0.8);
+}
+
+.button{
+    width: 450px;
+    background-color: dodgerblue;
+    color: white;
+    border-radius: 15px;
+    border: none;
+    padding: 10px 24px;
+    margin: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px
+}

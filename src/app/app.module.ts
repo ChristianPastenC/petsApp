@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule, NbCardModule,
          NbDialogModule, NbSelectModule, NbStepperModule,
          NbButtonGroupModule, NbIconModule, NbToggleModule,
-         NbInputModule, NbToastrModule,
+         NbInputModule, NbToastrModule, NbButtonModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -22,6 +22,7 @@ import { VerIndexComponent } from './ver-index/ver-index.component';
 import { PetDialogComponent } from './pet-dialog/pet-dialog.component';
 import { InfoComponent } from './info/info.component';
 import { DarAdopcionComponent } from './dar-adopcion/dar-adopcion.component';
+import { EditardialogComponent } from './editardialog/editardialog.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { DarAdopcionComponent } from './dar-adopcion/dar-adopcion.component';
     VerIndexComponent,
     PetDialogComponent,
     InfoComponent,
-    DarAdopcionComponent
+    DarAdopcionComponent,
+    EditardialogComponent
   ],
   imports: [
     BrowserModule,
@@ -53,6 +55,7 @@ import { DarAdopcionComponent } from './dar-adopcion/dar-adopcion.component';
     NbToggleModule,
     NbInputModule,
     NbToastrModule.forRoot(),
+    NbButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

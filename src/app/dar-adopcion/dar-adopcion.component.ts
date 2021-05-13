@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { NbToastrService, NbComponentStatus } from '@nebular/theme';
 import {UserServiceService} from '../services/user-service.service';
-
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-dar-adopcion',
@@ -231,34 +231,36 @@ export class DarAdopcionComponent implements OnInit {
    }
 
   sendData(){
-    var r = confirm("¿Está seguro de guardar los datos?");
-    if (r == true) {
-      var contact = this.contactForm.value;
-      var info = this.infoForm.value;
-      var gral = this.getScore();
-      var petData = this.jsonConcat(info,gral);
-      if(this.url != "assets/add.png"){
-        petData['foto'] = this.auxPicture;
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+      },
+      buttonsStyling: true
+    })
+    swalWithBootstrapButtons.fire({
+      title: 'Confirmación',
+      text: "¿Está seguro de guardar los datos?",
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonText: 'Continuar',
+      cancelButtonText: 'Cancelar',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        var contact = this.contactForm.value;
+        var info = this.infoForm.value;
+        var gral = this.getScore();
+        var petData = this.jsonConcat(info,gral);
+        if(this.url != "assets/add.png"){
+          petData['foto'] = this.auxPicture;
+        }
+        this.usrService.insertData(contact,petData, petData['foto']);
       }
-      /*console.log('Datos a guardar ...');
-      console.log(contact['nombre']);
-      console.log(contact['telefono']);
-      console.log(contact['correo']);
-      console.log(info['nombre']);
-      console.log(info['edad']);
-      console.log(info['raza']);
-      console.log(info['color']);
-      console.log(info['genero']);
-      console.log(gral['afectuoso']);
-      console.log(gral['agresivo']);
-      console.log(gral['amigable']);
-      console.log(gral['energia']);
-      console.log(gral['jugueton']);
-      console.log(petData);*/
-      this.usrService.insertData(contact,petData, petData['foto']);
-    }else {
-      return;
-    }
+      else{
+        return;
+      }
+    })
   }
 
   /*

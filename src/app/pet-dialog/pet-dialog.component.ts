@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 import {UserServiceService} from '../services/user-service.service';
+import { NbDialogRef, NbDialogService } from '@nebular/theme';
+import {EditardialogComponent} from '../editardialog/editardialog.component'
 
 @Component({
   selector: 'app-pet-dialog',
@@ -17,6 +20,8 @@ export class PetDialogComponent implements OnInit {
 
   constructor(
     private firestoreService: UserServiceService,
+    protected dialogRef: NbDialogRef<PetDialogComponent>,
+    private dialog: NbDialogService
   ) { }
 
   ngOnInit(): void {
@@ -42,6 +47,61 @@ export class PetDialogComponent implements OnInit {
     this.auxFeature['amigable'] = this.arrayStars(this.getNStars(this.petData.amigable));
     this.auxFeature['energia'] = this.arrayStars(this.getNStars(this.petData.energia));
     this.auxFeature['jugueton'] = this.arrayStars(this.getNStars(this.petData.jugueton));
+  }
+
+  Modificar():void{
+    Swal.fire({
+      title:"Modificar datos",
+      input: "text",
+      inputAttributes: {
+        autocapitalize: 'off'
+      },
+      showCancelButton: true,
+      confirmButtonText: 'Continuar',
+      cancelButtonText: "Cancelar",
+      showLoaderOnConfirm: true,
+      inputPlaceholder:"Ingresa tu código de verificación",
+    }).then((result) => {
+      if(result.isConfirmed){
+        if(result.value === ""){
+          Swal.fire({
+            title:"Error",
+            icon:"error",
+            text:"Debes ingresar un código válido",
+            confirmButtonText:"Aceptar"
+          })
+        }
+        else{
+          if(result.value === this.user){
+            this.cerrar();
+            this.editar(this.id,this.petData,this.user);
+          }
+          else{
+            Swal.fire({
+              title:"Error",
+              icon:"error",
+              text:"Debes ingresar el código que recibiste",
+              confirmButtonText:"Aceptar"
+            })
+          }
+        }
+      }
+      else{
+        this.cerrar();
+      }
+    }) 
+  }
+
+  cerrar(){
+    this.dialogRef.close();
+  }
+
+  editar(id,petData,user){
+    this.dialog.open(EditardialogComponent,{
+      context: {
+        id,petData,user
+      },
+    });
   }
 
   parsear(fecha){
