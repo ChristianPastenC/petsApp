@@ -5,9 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule, NbCardModule,
-         NbDialogModule, NbSelectModule,
+         NbDialogModule, NbSelectModule, NbStepperModule,
+         NbButtonGroupModule, NbIconModule, NbToggleModule,
+         NbInputModule, NbToastrModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
@@ -17,13 +20,19 @@ import { DashboardComponentsModule } from './dashboard-components/dashboard-comp
 import { HomeComponent } from './home/home.component';
 import { VerIndexComponent } from './ver-index/ver-index.component';
 import { PetDialogComponent } from './pet-dialog/pet-dialog.component';
+import { InfoComponent } from './info/info.component';
+import { DarAdopcionComponent } from './dar-adopcion/dar-adopcion.component';
+import { EditardialogComponent } from './editardialog/editardialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     VerIndexComponent,
-    PetDialogComponent
+    PetDialogComponent,
+    InfoComponent,
+    DarAdopcionComponent,
+    EditardialogComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +40,8 @@ import { PetDialogComponent } from './pet-dialog/pet-dialog.component';
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+    FormsModule,
+    ReactiveFormsModule,
     NbThemeModule.forRoot({ name: 'corporate' }),
     NbLayoutModule,
     NbEvaIconsModule,
@@ -38,6 +49,12 @@ import { PetDialogComponent } from './pet-dialog/pet-dialog.component';
     NbCardModule,
     NbDialogModule.forRoot(),
     NbSelectModule,
+    NbStepperModule,
+    NbButtonGroupModule,
+    NbIconModule,
+    NbToggleModule,
+    NbInputModule,
+    NbToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

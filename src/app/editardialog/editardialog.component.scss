@@ -7,7 +7,7 @@ nb-card {
 nb-card-body {
     padding: 0;
     width: 993px;
-    height: 600px;
+    height: 650px;
     display: grid;
     grid-template-columns: 322px auto;
 }
@@ -20,7 +20,7 @@ nb-card-body {
 img{
     float: right;
     width: 540px;
-    height: 600px;
+    height: 650px;
 }
 
 p strong {
@@ -30,7 +30,12 @@ p strong {
 #features{
     display: inline-block;
 }
-button{
+.line{
+    display: inline-block;
+    text-align: left;
+    width: 200px;
+}
+#save{
     background-color: dodgerblue;
     color: white;
     border-radius: 15px;

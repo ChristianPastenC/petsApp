@@ -1,17 +1,34 @@
 <nb-card>
-    <nb-card-header>
-        <img src="{{ petData.foto }}"/>
-    </nb-card-header>
     <nb-card-body>
         <nb-card-body>
-            <p class="h6">{{ petData.nombre }}</p>
-            <p class="subtitle-2">
-                {{ petData.genero }}, {{ petData.color }}, {{ petData.edad }}
-            </p>
-            <p>
-                {{ petData.raza }} <br />
-            </p>
-            </nb-card-body>
+            <div class = "datos">
+                <h3>{{ petData.nombre }}</h3>
+                <p>Es un <strong> {{petData.raza}}, </strong>
+                         <strong> {{ petData.genero }} </strong>
+                        de edad <strong> {{ petData.edad }} </strong>
+                        y de color <strong> {{ petData.color }}, </strong>
+                        registrado el <strong> {{petData.f_registro}} </strong>
+                </p>
+                
+                <div class='features'>Afectuoso:  <span *ngFor="let i of auxFeature['afecto']"><nb-icon icon="star" status="info"></nb-icon></span></div><br>
+                <div class='features'>Agresivo:   <span *ngFor="let i of auxFeature['agresivo']"><nb-icon icon="star" status="info"></nb-icon></span></div><br>
+                <div class='features'>Amigable:   <span *ngFor="let i of auxFeature['amigable']"><nb-icon icon="star" status="info"></nb-icon></span></div><br>
+                <div class='features'>Energético: <span *ngFor="let i of auxFeature['energia']"><nb-icon icon="star" status="info"></nb-icon></span></div><br>
+                <div class='features'>Juguetón:   <span *ngFor="let i of auxFeature['jugueton']"><nb-icon icon="star" status="info"></nb-icon></span></div>
+                <div>
+                    <h4>Contacto: </h4>
+                    <p class="usuarioDatos">Nombre: {{userData.nombre}} {{userData.apellidos}}</p>
+                    <p class="usuarioDatos">Correo:<a href="mailto:{{userData.correo}}"> {{userData.correo}}</a></p>
+                    <p class="usuarioDatos">Teléfono: {{userData.telefono}}</p>
+                </div>   
+                <div>
+                    <button (click)="Modificar()">Modificar</button>
+                </div>  
+            </div>
+            <div id='img'>
+                <img src="{{petData.foto}}">
+            </div>
+        </nb-card-body>
     </nb-card-body>
 </nb-card>
   

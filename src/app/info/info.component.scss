@@ -1,4 +1,5 @@
 @import "../../themes";
+
 .container {
   margin: auto;
   display: grid;
@@ -7,37 +8,68 @@
   justify-content: center;
 }
 
-.pet {
+.bar{
+    min-height: 50% !important;
+}
+
+#reference{
+  height: 75px;
+  width: auto;
+}
+
+#texto{
+  display: inline-block;
+  vertical-align: center;
+  font-size: 120%;
+  line-height: 1.9;
+}
+
+.cardG {
   cursor: pointer;
-  max-width: 300px;
-  min-height: 360px;
+  min-height: 1500px;
+  margin: 0px;
+  
+}
+
+#imgCard{
+  border-radius: 25px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.infoCard {
+  cursor: pointer;
+  max-width: 350px;
+  min-height: 600px;
   margin: 0px;
   transition: all 400ms;
-
+  padding: 30px;
+  margin: 30px;
   &:hover {
     transform: translateY(-3px);
     box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.15);
   }
 }
 
-.pet p {
+.infoCard p {
   margin: 0px;
+  font-size: 100%;
 }
 
-.pet nb-card-header {
+.infoCard nb-card-header {
   padding: 0px;
   border-width: 0px;
   overflow: hidden;
   height: 50%;
 }
 
-.pet nb-card-body {
+.infoCard nb-card-body {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
 
-.pet img {
+.infoCard img {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -49,32 +81,4 @@ nb-layout-column {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-
-.card-buttons {
-  width: 100%;
-  align-self: flex-end;
-  flex-grow: 3;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-end;
-}
-
-.card-buttons button:nth-child(2) {
-  margin-left: 10px;
-}
-
-#reference{
-  height: 75px;
-  width: auto;
-}
-
-img{
-  display: inline;
-}
-
-.filterItems{
-  display: inline-block;
-  margin-left: 550px;
 }
