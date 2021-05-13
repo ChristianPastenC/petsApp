@@ -1,13 +1,11 @@
 <nb-card>
     <nb-card-body >
-      <div>
-      <!--<div class="block" id="inputImg"> -->
-        <!-- 
-        <img [src]="url"> <br/>
+      <div class="block" id="inputImg"> 
+        <br><br>
+        <img [src]="url">
         <input type='file' name="file" id="file" class="inputfile" (change)="onSelectFile($event)">
         <label for="file" class="button"><nb-icon icon="arrow-circle-up-outline"></nb-icon>Selecciona una Imagen</label>
-        -->
-        <img [src]="petData.foto">
+        <!--<img [src]="petData.foto">-->
       </div>
       <div class='right'>
         <h3>{{ petData.nombre }}</h3>
@@ -77,7 +75,7 @@
             formControlName="telefono">
           <br>
         </form>
-        <br><br><br>
+        <br><br>
         <div id='btn'>
           <button nbButton
             status="info" 
@@ -88,6 +86,7 @@
             </nb-icon>
             Guardar
           </button>
+          <br><br>
       </div>
       </div>           
   </nb-card-body>

@@ -283,7 +283,13 @@ export class EditardialogComponent implements OnInit {
         var info = this.infoForm.value;
         var gral = this.getScore();
         var petData = this.jsonConcat(info,gral);
-        this.firestoreService.updateData(this.user,tel,this.id,petData);
+        var ref:boolean;
+        if(this.petData.foto == this.url){
+          ref = false; //En caso de que no se cambie la foto
+        }else{
+          ref = true; //Si se realiza un cambio en la foto
+        }
+        this.firestoreService.updateData(this.user,tel,this.id,this.petData.foto,this.auxPicture,ref,petData);
         Swal.fire({
           title:"¡Exito!",
           text: "Los datos han sido actualizados",

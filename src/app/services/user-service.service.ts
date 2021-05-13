@@ -63,11 +63,25 @@ export class UserServiceService {
     return this.auxID;
   }
 
-  public updateData(iduser, phone, idpet,
+  public updateData(iduser, phone, idpet, oldImg, newImg:File, aux:boolean,
                     petData: {edad:string,raza:string,afectuoso:string,
-                              agresivo:string,amigable:string,energia:string,jugueton:string})
+                              agresivo:string,amigable:string,energia:string,jugueton:string, foto:string})
   {
-    this.firestore.collection('usuario').doc(iduser).update({telefono : phone});
-    this.firestore.collection('mascota').doc(idpet).update(petData);
+    if(aux == true){
+      this.storage.refFromURL(oldImg).delete();
+      let filepath = `imagenes/${newImg.name}_${new Date().getTime()}`;
+      const ref = this.storage.ref(filepath);
+      this.storage.upload(filepath, newImg).then(() => {
+        ref.getDownloadURL().toPromise().then((res => {
+          petData.foto = res;
+          this.firestore.collection('usuario').doc(iduser).update({telefono : phone});
+          this.firestore.collection('mascota').doc(idpet).update(petData); 
+        }));
+      });
+    }else{
+      petData.foto = oldImg;
+      this.firestore.collection('usuario').doc(iduser).update({telefono : phone});
+      this.firestore.collection('mascota').doc(idpet).update(petData); 
+    }
   }
 }
