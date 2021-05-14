@@ -6,8 +6,10 @@ import  {
   NbMenuModule,
   NbButtonModule,
   NbTabsetModule,
-  NbCardModule,
+  NbCardModule, 
+  NbIconModule,
 } from '@nebular/theme';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { FooterComponentComponent } from './footer-component/footer-component.component';
 import { HeaderComponentComponent } from './header-component/header-component.component';
 import { RouterModule } from '@angular/router';
@@ -25,7 +27,9 @@ import { RouterModule } from '@angular/router';
     NbButtonModule,
     NbTabsetModule,
     NbCardModule,
-    NbMenuModule.forRoot()
+    NbMenuModule.forRoot(),
+    NbEvaIconsModule,
+    NbIconModule,
   ],
   exports:[
     HeaderComponentComponent,

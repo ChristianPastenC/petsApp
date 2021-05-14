@@ -1,3 +1,82 @@
-p{
+#container{
+    background-color: dodgerblue;
+    width: auto;
+    min-height: 200px;
+}
+
+#icons{
+    float:right;
+    //display: inline-block;
+}
+
+a{
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+a:link {
+    text-decoration: none;
+    color: white;
+}
+  
+a:visited {
+    text-decoration: none;
+    color: white;
+}
+  
+a:hover {
+    text-decoration: none;
+    color: rgba($color: #fff, $alpha: 0.7);
+}
+  
+a:active {
+    text-decoration: none;
+    color: white;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+}
+
+  
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+.left, .right {
+    width: 33.33%;
+}
+
+.right{
+    padding-left: 150px;
+}
+
+.middle {
+    //align-items: center;
+    text-align: center;
+    width: 33.33%;
+}
+
+#line{
+    display: inline-block;
+    padding-right: 15px;
+    color: white;
+    font-size: 20px;
+    font-style: italic;
+    vertical-align: middle;
+}
+
+small{
+    color:white;
+}
+
+#copy{
     text-align: center;
 }
+

@@ -4,7 +4,7 @@
   margin: auto;
   display: grid;
   grid-template-columns: auto auto auto;
-  grid-gap: 30px;
+  //grid-gap: 30px;
   justify-content: center;
 }
 
@@ -39,12 +39,12 @@
 
 .infoCard {
   cursor: pointer;
-  max-width: 350px;
-  min-height: 600px;
+  max-width: 480px;
+  min-height: 650px;
   margin: 0px;
   transition: all 400ms;
-  padding: 30px;
-  margin: 30px;
+  padding: 20px;
+  margin: 20px;
   &:hover {
     transform: translateY(-3px);
     box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.15);
@@ -54,6 +54,7 @@
 .infoCard p {
   margin: 0px;
   font-size: 100%;
+  font-style: italic;
 }
 
 .infoCard nb-card-header {
