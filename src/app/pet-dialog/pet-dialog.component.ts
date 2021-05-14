@@ -3,6 +3,7 @@ import Swal from 'sweetalert2';
 import {UserServiceService} from '../services/user-service.service';
 import { NbDialogRef, NbDialogService } from '@nebular/theme';
 import {EditardialogComponent} from '../editardialog/editardialog.component'
+import { NbToastrService } from '@nebular/theme';
 
 @Component({
   selector: 'app-pet-dialog',
@@ -21,7 +22,8 @@ export class PetDialogComponent implements OnInit {
   constructor(
     private firestoreService: UserServiceService,
     protected dialogRef: NbDialogRef<PetDialogComponent>,
-    private dialog: NbDialogService
+    private dialog: NbDialogService,
+    private toastr: NbToastrService
   ) { }
 
   ngOnInit(): void {
@@ -92,6 +94,53 @@ export class PetDialogComponent implements OnInit {
     }) 
   }
 
+  Eliminar(){
+    Swal.fire({
+      title:"Eliminar mascota",
+      input: "text",
+      icon: "warning",
+      inputAttributes: {
+        autocapitalize: 'off'
+      },
+      showCancelButton: true,
+      confirmButtonText: 'Continuar',
+      cancelButtonText: "Cancelar",
+      showLoaderOnConfirm: true,
+      inputPlaceholder:"Ingresa tu código de verificación",
+    }).then((result) => {
+      if(result.isConfirmed){
+        if(result.value === ""){
+          Swal.fire({
+            title:"Error",
+            icon:"error",
+            text:"Debes ingresar un código válido",
+            confirmButtonText:"Aceptar"
+          })
+        }
+        else{
+          if(result.value === this.user){
+            this.cerrar();
+
+             this.eliminarMascota(this.id, this.user);
+             this.mostrarAlerta('danger','top-left', true, true);
+
+          }
+          else{
+            Swal.fire({
+              title:"Error",
+              icon:"error",
+              text:"Debes ingresar el código que recibiste",
+              confirmButtonText:"Aceptar"
+            })
+          }
+        }
+      }
+      else{
+        this.cerrar();
+      }
+    })
+  }
+
   cerrar(){
     this.dialogRef.close();
   }
@@ -103,7 +152,12 @@ export class PetDialogComponent implements OnInit {
       },
     });
   }
-
+ 
+  eliminarMascota(id,id_usuario){
+    let resultado = this.firestoreService.deleteData(id,id_usuario,this.petData.foto);
+    console.log(resultado);
+  }
+  
   parsear(fecha){
     const date = fecha.toDate().toLocaleDateString('es-ES');
     return date;
@@ -146,4 +200,7 @@ export class PetDialogComponent implements OnInit {
     return array;
   }
 
+  mostrarAlerta(status,position,preventDuplicates,destroyByClick){
+    this.toastr.show("Eliminar", 'Su mascota a sido eliminada correctamente', { status, position, preventDuplicates, destroyByClick });
+  }
 }

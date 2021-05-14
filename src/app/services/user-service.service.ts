@@ -84,4 +84,10 @@ export class UserServiceService {
       this.firestore.collection('mascota').doc(idpet).update(petData); 
     }
   }
+
+  public deleteData(idpet,iduser,refFoto){
+    this.storage.refFromURL(refFoto).delete();
+    this.firestore.collection('mascota').doc(idpet).delete();
+    this.firestore.collection('usuario').doc(iduser).delete();
+  }
 }

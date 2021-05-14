@@ -24,11 +24,12 @@
                 </p>
                 
                 <div class="botones">
-                    <button nbButton ghost status="primary" (click)="Modificar()">
+                    <button nbButton ghost status="info" (click)="Modificar()">
                         <nb-icon icon="refresh" [options]="{ animation: { type: 'zoom' } }">
                         </nb-icon>
                     </button>
-                    <button nbButton ghost status="primary" (click)="Modificar()">
+                    <!-- Boton para elliminar-->
+                    <button nbButton ghost status="danger" (click)="Eliminar()">
                         <nb-icon icon="trash-2" [options]="{ animation: { type: 'zoom' } }">
                         </nb-icon>
                     </button>
